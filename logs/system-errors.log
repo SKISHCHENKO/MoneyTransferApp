@@ -1,0 +1,27 @@
+2024-11-21 00:54:06 - Tomcat initialized with port 5500 (http)
+2024-11-21 00:54:07 - Root WebApplicationContext: initialization completed in 2832 ms
+2024-11-21 00:54:08 - Exposing 15 endpoints beneath base path '/actuator'
+2024-11-21 00:54:08 - Tomcat started on port 5500 (http) with context path '/'
+2024-11-21 00:54:25 - Initializing Servlet 'dispatcherServlet'
+2024-11-21 00:54:25 - Completed initialization in 2 ms
+2024-11-21 22:59:01 - Tomcat initialized with port 5500 (http)
+2024-11-21 22:59:01 - Root WebApplicationContext: initialization completed in 1850 ms
+2024-11-21 22:59:02 - Exposing 15 endpoints beneath base path '/actuator'
+2024-11-21 22:59:02 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-11-21 22:59:02 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-11-21 22:59:02 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 5500 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 5500 or configure this application to listen on another port.
+

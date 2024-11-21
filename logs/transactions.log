@@ -1,0 +1,17 @@
+2024-11-21 00:41:01 - Starting MoneyTransferAppApplication using Java 19.0.1 with PID 16848 (C:\JAVA\MoneyTransferApp\target\classes started by Userg in C:\JAVA\MoneyTransferApp)
+2024-11-21 00:41:01 - No active profile set, falling back to 1 default profile: "default"
+2024-11-21 00:41:06 - Started MoneyTransferAppApplication in 5.457 seconds (process running for 7.034)
+2024-11-21 00:41:35 - Транзакция: ID=1, карта отправителя=1111111111111111, карта получателя=2222222222222222, сумма=10000 RUR, код подтверждения=0000
+2024-11-21 00:41:35 - Операция подтверждена: ID=1, код=0000
+2024-11-21 00:42:34 - Starting MoneyTransferAppApplication using Java 19.0.1 with PID 22072 (C:\JAVA\MoneyTransferApp\target\classes started by Userg in C:\JAVA\MoneyTransferApp)
+2024-11-21 00:42:34 - No active profile set, falling back to 1 default profile: "default"
+2024-11-21 00:42:38 - Started MoneyTransferAppApplication in 5.119 seconds (process running for 6.605)
+2024-11-21 00:43:15 - Транзакция: ID=1, карта отправителя=1111111111111111, карта получателя=2222222222222222, сумма=10000 RUR, код подтверждения=0000
+2024-11-21 00:43:15 - Операция подтверждена: ID=1, код=0000
+2024-11-21 00:54:04 - Starting MoneyTransferAppApplication using Java 19.0.1 with PID 26916 (C:\JAVA\MoneyTransferApp\target\classes started by Userg in C:\JAVA\MoneyTransferApp)
+2024-11-21 00:54:04 - No active profile set, falling back to 1 default profile: "default"
+2024-11-21 00:54:08 - Started MoneyTransferAppApplication in 5.402 seconds (process running for 6.935)
+2024-11-21 00:54:26 - Транзакция: ID=1, карта отправителя=1111111111111111, карта получателя=2222222222222222, сумма=11000 RUR, код подтверждения=0000
+2024-11-21 00:54:26 - Операция подтверждена: ID=1, код=0000
+21-11-2024 22:58:59 - Starting MoneyTransferAppApplication using Java 19.0.1 with PID 18988 (C:\JAVA\MoneyTransferApp\target\classes started by Userg in C:\JAVA\MoneyTransferApp)
+21-11-2024 22:58:59 - No active profile set, falling back to 1 default profile: "default"

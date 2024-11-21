@@ -1,0 +1,56 @@
+<configuration>
+
+    <!-- Основной аппендер для логирования в консоль -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{dd-MM-yyyy HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <!-- Аппендер для логирования системных сообщений -->
+    <appender name="SYSTEM_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/system.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Аппендер для логирования системных ошибок -->
+    <appender name="ERROR_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/system-errors.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Аппендер для транзакционных логов -->
+    <appender name="TRANSACTION_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/transactions.log</file>
+        <encoder>
+            <pattern>%d{dd-MM-yyyy HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Логирование для системных ошибок -->
+    <logger name="org.springframework" level="ERROR">
+        <appender-ref ref="ERROR_FILE" />
+    </logger>
+
+    <logger name="org.hibernate" level="ERROR">
+        <appender-ref ref="ERROR_FILE" />
+    </logger>
+
+    <!-- Логирование для транзакций -->
+    <logger name="com.example.MoneyTransferApp" level="INFO">
+        <appender-ref ref="TRANSACTION_FILE" />
+    </logger>
+
+    <!-- Логирование системных сообщений -->
+    <logger name="org.springframework" level="INFO">
+        <appender-ref ref="SYSTEM_FILE" />
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
