@@ -1,8 +1,5 @@
 package com.example.MoneyTransferApp.controller;
 
-import com.example.MoneyTransferApp.request.ConfirmOperationRequest;
-import com.example.MoneyTransferApp.request.MoneyTransferRequest;
-import com.example.MoneyTransferApp.request.MoneyTransferRequest.Money;
 import com.example.MoneyTransferApp.response.MoneyTransferResponse;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +9,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -25,17 +22,17 @@ class MoneyTransferControllerIntegrationTest {
     @Test
     void testMoneyTransferSuccess() throws Exception {
         String transferRequest = """
-            {
-                "cardFromNumber": "1234567890123456",
-                "cardToNumber": "6543210987654321",
-                "cardFromValidTill": "12/25",
-                "cardFromCVV": "123",
-                "amount": {
-                    "value": 100000,
-                    "currency": "RUB"
-                }
-            }
-        """;
+                    {
+                        "cardFromNumber": "1234567890123456",
+                        "cardToNumber": "6543210987654321",
+                        "cardFromValidTill": "12/25",
+                        "cardFromCVV": "123",
+                        "amount": {
+                            "value": 100000,
+                            "currency": "RUB"
+                        }
+                    }
+                """;
 
         mockMvc.perform(post("/transfer")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -47,17 +44,17 @@ class MoneyTransferControllerIntegrationTest {
     @Test
     void testMoneyTransferValidationFailure() throws Exception {
         String invalidTransferRequest = """
-            {
-                "cardFromNumber": "1234567890123456",
-                "cardToNumber": "1234567890123456",
-                "cardFromValidTill": "12/25",
-                "cardFromCVV": "123",
-                "amount": {
-                    "value": 100000,
-                    "currency": "RUB"
-                }
-            }
-        """;
+                    {
+                        "cardFromNumber": "1234567890123456",
+                        "cardToNumber": "1234567890123456",
+                        "cardFromValidTill": "12/25",
+                        "cardFromCVV": "123",
+                        "amount": {
+                            "value": 100000,
+                            "currency": "RUB"
+                        }
+                    }
+                """;
 
         mockMvc.perform(post("/transfer")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -70,17 +67,17 @@ class MoneyTransferControllerIntegrationTest {
     void testConfirmOperationSuccess() throws Exception {
         // Предварительно создать операцию перевода
         String transferRequest = """
-            {
-                "cardFromNumber": "1234567890123456",
-                "cardToNumber": "6543210987654321",
-                "cardFromValidTill": "12/25",
-                "cardFromCVV": "123",
-                "amount": {
-                    "value": 100000,
-                    "currency": "RUB"
-                }
-            }
-        """;
+                    {
+                        "cardFromNumber": "1234567890123456",
+                        "cardToNumber": "6543210987654321",
+                        "cardFromValidTill": "12/25",
+                        "cardFromCVV": "123",
+                        "amount": {
+                            "value": 100000,
+                            "currency": "RUB"
+                        }
+                    }
+                """;
 
         String response = mockMvc.perform(post("/transfer")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -96,11 +93,11 @@ class MoneyTransferControllerIntegrationTest {
 
         // Подтвердить операцию
         String confirmRequest = String.format("""
-            {
-                "operationId": "%s",
-                "code": "0000"
-            }
-        """, operationId);
+                    {
+                        "operationId": "%s",
+                        "code": "0000"
+                    }
+                """, operationId);
 
         mockMvc.perform(post("/confirmOperation")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -112,11 +109,11 @@ class MoneyTransferControllerIntegrationTest {
     @Test
     void testConfirmOperationInvalidCode() throws Exception {
         String confirmRequest = """
-            {
-                "operationId": "1",
-                "code": "1234"
-            }
-        """;
+                    {
+                        "operationId": "1",
+                        "code": "1234"
+                    }
+                """;
 
         mockMvc.perform(post("/confirmOperation")
                         .contentType(MediaType.APPLICATION_JSON)
