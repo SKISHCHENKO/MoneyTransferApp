@@ -29,3 +29,23 @@ Identify and stop the process that's listening on port 5500 or configure this ap
 2024-11-21 22:59:40 - Root WebApplicationContext: initialization completed in 1891 ms
 2024-11-21 22:59:41 - Exposing 15 endpoints beneath base path '/actuator'
 2024-11-21 22:59:41 - Tomcat started on port 5500 (http) with context path '/'
+2024-11-23 23:26:27 - Initializing Spring TestDispatcherServlet ''
+2024-11-23 23:26:27 - Initializing Servlet ''
+2024-11-23 23:26:27 - Exposing 15 endpoints beneath base path '/actuator'
+2024-11-23 23:26:27 - Completed initialization in 37 ms
+2024-11-23 23:27:39 - Initializing Spring TestDispatcherServlet ''
+2024-11-23 23:27:39 - Initializing Servlet ''
+2024-11-23 23:27:39 - Exposing 15 endpoints beneath base path '/actuator'
+2024-11-23 23:27:39 - Completed initialization in 76 ms
+2024-11-23 23:28:23 - Initializing Spring TestDispatcherServlet ''
+2024-11-23 23:28:23 - Initializing Servlet ''
+2024-11-23 23:28:23 - Exposing 15 endpoints beneath base path '/actuator'
+2024-11-23 23:28:24 - Completed initialization in 64 ms
+2024-11-23 23:31:24 - Initializing Spring TestDispatcherServlet ''
+2024-11-23 23:31:24 - Initializing Servlet ''
+2024-11-23 23:31:24 - Exposing 15 endpoints beneath base path '/actuator'
+2024-11-23 23:31:24 - Completed initialization in 58 ms
+2024-11-23 23:32:02 - Initializing Spring TestDispatcherServlet ''
+2024-11-23 23:32:02 - Initializing Servlet ''
+2024-11-23 23:32:02 - Exposing 15 endpoints beneath base path '/actuator'
+2024-11-23 23:32:02 - Completed initialization in 82 ms
