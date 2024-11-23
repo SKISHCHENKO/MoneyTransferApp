@@ -25,3 +25,7 @@ Action:
 
 Identify and stop the process that's listening on port 5500 or configure this application to listen on another port.
 
+2024-11-21 22:59:40 - Tomcat initialized with port 5500 (http)
+2024-11-21 22:59:40 - Root WebApplicationContext: initialization completed in 1891 ms
+2024-11-21 22:59:41 - Exposing 15 endpoints beneath base path '/actuator'
+2024-11-21 22:59:41 - Tomcat started on port 5500 (http) with context path '/'

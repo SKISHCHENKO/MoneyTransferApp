@@ -15,3 +15,6 @@
 2024-11-21 00:54:26 - Операция подтверждена: ID=1, код=0000
 21-11-2024 22:58:59 - Starting MoneyTransferAppApplication using Java 19.0.1 with PID 18988 (C:\JAVA\MoneyTransferApp\target\classes started by Userg in C:\JAVA\MoneyTransferApp)
 21-11-2024 22:58:59 - No active profile set, falling back to 1 default profile: "default"
+21-11-2024 22:59:38 - Starting MoneyTransferAppApplication using Java 19.0.1 with PID 22040 (C:\JAVA\MoneyTransferApp\target\classes started by Userg in C:\JAVA\MoneyTransferApp)
+21-11-2024 22:59:38 - No active profile set, falling back to 1 default profile: "default"
+21-11-2024 22:59:41 - Started MoneyTransferAppApplication in 3.6 seconds (process running for 4.051)

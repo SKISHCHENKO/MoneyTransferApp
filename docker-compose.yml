@@ -1,0 +1,8 @@
+services:
+  app:
+    image: money-transfer-app:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5500:5500"
