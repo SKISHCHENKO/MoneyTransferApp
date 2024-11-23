@@ -37,20 +37,19 @@ FRONT доступен [по адресу](https://github.com/serp-ya/card-trans
 ## Архитектура приложения
 Приложение представляет собой сервис перевода денег между картами. Вот основные компоненты и их функции:
 
-### 1. Контроллеры (controller)
- MoneyTransferController: отвечает за обработку запросов на перевод денег и подтверждение операций.
-Маршруты:
+### 1. Контроллер (controller class MoneyTransferController)
+ MoneyTransferController отвечает за обработку запросов на перевод денег и подтверждение операций.
 - POST /transfer: обработка перевода.
 - POST /confirmOperation: подтверждение операции перевода.
 - ExceptionHandlerAdvice: обработчик исключений, чтобы возвращать дружелюбные сообщения об ошибках клиенту.
 
-### 2. Сервисы (service)
- MoneyTransferService: содержит бизнес-логику:
+### 2. Сервис (service class MoneyTransferService)
+ MoneyTransferService содержит бизнес-логику:
 - Проверяет, чтобы карты отправителя и получателя не совпадали.
 - Генерирует и логирует ID операции и код подтверждения.
 - Проверяет корректность кода подтверждения.
 
-### 3. Репозиторий (repository)
+### 3. Репозиторий (repository class MoneyTransferRepository)
 MoneyTransferRepository:
 - Сохраняет все операции перевода в памяти (ConcurrentHashMap).
 - Генерирует уникальные идентификаторы операций.
@@ -59,83 +58,80 @@ MoneyTransferRepository:
 ### 4. Запрос-Ответ (request и response)
 Запросы:
 - MoneyTransferRequest: содержит данные о переводе, включая номера карт, сумму и CVC.
-- ConfirmOperationRequest: содержит ID операции и код подтверждения.
+- ConfirmOperationRequest: содержит ID операции и код подтверждения.  
 Ответы:
 - MoneyTransferResponse: возвращает клиенту ID операции.
 - ErrorResponse: возвращает сообщение об ошибке.
 
-### 5. Исключения (exception)
-InputDataException: выбрасывается при некорректных данных (например, если перевод на ту же карту или неверный код подтверждения).
+### 5. Исключения (exception class InputDataException )
+Выбрасывается при некорректных данных (например, если перевод на ту же карту или неверный код подтверждения).
 
 ## Примеры HTTP-запросов
 
 ### 1. Перевод денег
-Запрос:
-POST /transfer HTTP/1.1
-Content-Type: application/json
-Тело запроса:
-json
-{
-    "cardFromNumber": "1234567890123456",
-    "cardToNumber": "6543210987654321",
-    "cardFromValidTill": "12/25",
-    "cardFromCVV": "111",
-    "amount": {
-        "value": 100000,
-        "currency": "RUB"
-    }
-}
+Запрос:  
+POST /transfer HTTP/1.1  
+Content-Type: application/json  
+Тело запроса:  
+json  
+{  
+    "cardFromNumber": "1234567890123456",  
+    "cardToNumber": "6543210987654321",  
+    "cardFromValidTill": "12/25",  
+    "cardFromCVV": "111",  
+    "amount": {  
+        "value": 100000,  
+        "currency": "RUB"  
+    }  
+}  
 
-Ответ:
-json
-{
-    "operationId": "1"
-}
+Ответ:  
+json  
+{  
+    "operationId": "1"  
+}  
 
 ### 2. Подтверждение операции
-Запрос:
-POST /confirmOperation HTTP/1.1
-Content-Type: application/json
-Тело запроса:
-
-json
-Копировать код
+Запрос:  
+POST /confirmOperation HTTP/1.1  
+Content-Type: application/json  
+Тело запроса:  
+json  
 {
     "operationId": "1",
     "code": "0000"
-}
+}  
 
-Ответ:
-json
-Копировать код
-{
-    "operationId": "1"
-}
+Ответ:  
+json  
+Копировать код  
+{  
+    "operationId": "1"  
+}  
 
 ### 3. Ошибка при некорректных данных
-Запрос:
-POST /transfer HTTP/1.1
-Content-Type: application/json
-Тело запроса:
-json
-Копировать код
-{
-    "cardFromNumber": "1234567890123456",
-    "cardToNumber": "1234567890123456",
-    "cardFromValidTill": "12/25",
-    "cardFromCVV": "111",
-    "amount": {
-        "value": 100000,
-        "currency": "RUB"
-    }
-}
+Запрос:  
+POST /transfer HTTP/1.1  
+Content-Type: application/json  
+Тело запроса:  
+json  
+{  
+    "cardFromNumber": "1234567890123456",  
+    "cardToNumber": "1234567890123456",  
+    "cardFromValidTill": "12/25",  
+    "cardFromCVV": "111",  
+    "amount": {  
+        "value": 100000,  
+        "currency": "RUB"  
+    }  
+}  
 
-Ответ:
-json
-{
-    "message": "Перевод на ту же самую карту невозможен!"
-}
-
+Ответ:  
+json  
+{  
+    "message": "Перевод на ту же самую карту невозможен!"  
+}  
+  
 ## Логика работы приложения
 - Клиент отправляет запрос на перевод денег через POST /transfer.
 - Приложение генерирует уникальный ID операции, код подтверждения (0000) и сохраняет данные в репозиторий.
