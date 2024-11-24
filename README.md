@@ -35,13 +35,13 @@ FRONT доступен [по адресу](https://github.com/serp-ya/card-trans
 файла по спецификации OpenAPI (подробнее [по ссылке 1](https://swagger.io/specification/) и [ссылке 2](https://starkovden.github.io/introduction-openapi-and-swagger.html)).
 
 ## Архитектура приложения
-Приложение представляет собой сервис перевода денег между картами. Вот основные компоненты и их функции:
+Приложение представляет собой сервис перевода денег между картами.
 
 ### 1. Контроллер (controller class MoneyTransferController)
  MoneyTransferController отвечает за обработку запросов на перевод денег и подтверждение операций.
 - POST /transfer: обработка перевода.
 - POST /confirmOperation: подтверждение операции перевода.
-- ExceptionHandlerAdvice: обработчик исключений, чтобы возвращать дружелюбные сообщения об ошибках клиенту.
+- ExceptionHandlerAdvice: обработчик исключений, чтобы возвращать сообщения об ошибках.
 
 ### 2. Сервис (service class MoneyTransferService)
  MoneyTransferService содержит бизнес-логику:
@@ -57,11 +57,11 @@ MoneyTransferRepository:
 
 ### 4. Запрос-Ответ (request и response)
 Запросы:
-- MoneyTransferRequest: содержит данные о переводе, включая номера карт, сумму и CVC.
-- ConfirmOperationRequest: содержит ID операции и код подтверждения.  
+- MoneyTransferRequest содержит данные о переводе, включая номера карт, сумму и CVC.
+- ConfirmOperationRequest содержит ID операции и код подтверждения.  
 Ответы:
-- MoneyTransferResponse: возвращает клиенту ID операции.
-- ErrorResponse: возвращает сообщение об ошибке.
+- MoneyTransferResponse возвращает клиенту ID операции.
+- ErrorResponse возвращает сообщение об ошибке.
 
 ### 5. Исключения (exception class InputDataException )
 Выбрасывается при некорректных данных (например, если перевод на ту же карту или неверный код подтверждения).
