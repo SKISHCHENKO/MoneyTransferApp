@@ -3,7 +3,7 @@ package com.example.MoneyTransferApp;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpStatus;
+import org.springframework.http.*;
 import org.springframework.test.web.client.match.MockRestRequestMatchers;
 import org.springframework.web.client.RestTemplate;
 import org.testcontainers.containers.GenericContainer;
@@ -46,8 +46,15 @@ public class MoneyTransferContainerTest {
             }
         """;
 
+        // Создание заголовков запроса
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        // Формирование HTTP-запроса
+        HttpEntity<String> requestEntity = new HttpEntity<>(transferRequest, headers);
+
         // Выполнение POST-запроса
-        var response = restTemplate.postForEntity(baseUrl + "/transfer", transferRequest, String.class);
+        ResponseEntity<String> response = restTemplate.postForEntity(baseUrl + "/transfer", requestEntity, String.class);
 
         // Проверка результата
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);

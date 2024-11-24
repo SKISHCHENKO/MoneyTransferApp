@@ -45,3 +45,21 @@
 23-11-2024 23:32:05 - Транзакция: ID=1, карта отправителя=1234567890123456, карта получателя=6543210987654321, сумма=1000 RUB, код подтверждения=0000
 23-11-2024 23:32:05 - Операция подтверждена: ID=1, код=0000
 23-11-2024 23:32:05 - Транзакция: ID=2, карта отправителя=1234567890123456, карта получателя=6543210987654321, сумма=1000 RUB, код подтверждения=0000
+24-11-2024 12:52:47 - Starting MoneyTransferContainerTest using Java 19.0.1 with PID 25172 (started by Userg in C:\JAVA\MoneyTransferApp)
+24-11-2024 12:52:47 - No active profile set, falling back to 1 default profile: "default"
+24-11-2024 12:52:49 - Started MoneyTransferContainerTest in 2.31 seconds (process running for 16.026)
+24-11-2024 12:54:30 - Starting MoneyTransferContainerTest using Java 19.0.1 with PID 27920 (started by Userg in C:\JAVA\MoneyTransferApp)
+24-11-2024 12:54:30 - No active profile set, falling back to 1 default profile: "default"
+24-11-2024 12:54:32 - Started MoneyTransferContainerTest in 2.37 seconds (process running for 10.443)
+24-11-2024 12:56:24 - Starting MoneyTransferControllerIntegrationTest using Java 19.0.1 with PID 18876 (started by Userg in C:\JAVA\MoneyTransferApp)
+24-11-2024 12:56:24 - No active profile set, falling back to 1 default profile: "default"
+24-11-2024 12:56:26 - Started MoneyTransferControllerIntegrationTest in 2.949 seconds (process running for 4.387)
+24-11-2024 12:56:27 - РўСЂР°РЅР·Р°РєС†РёСЏ: ID=1, РєР°СЂС‚Р° РѕС‚РїСЂР°РІРёС‚РµР»СЏ=1234567890123456, РєР°СЂС‚Р° РїРѕР»СѓС‡Р°С‚РµР»СЏ=6543210987654321, СЃСѓРјРјР°=1000 RUB, РєРѕРґ РїРѕРґС‚РІРµСЂР¶РґРµРЅРёСЏ=0000
+24-11-2024 12:56:27 - РћРїРµСЂР°С†РёСЏ РїРѕРґС‚РІРµСЂР¶РґРµРЅР°: ID=1, РєРѕРґ=0000
+24-11-2024 12:56:27 - РўСЂР°РЅР·Р°РєС†РёСЏ: ID=2, РєР°СЂС‚Р° РѕС‚РїСЂР°РІРёС‚РµР»СЏ=1234567890123456, РєР°СЂС‚Р° РїРѕР»СѓС‡Р°С‚РµР»СЏ=6543210987654321, СЃСѓРјРјР°=1000 RUB, РєРѕРґ РїРѕРґС‚РІРµСЂР¶РґРµРЅРёСЏ=0000
+24-11-2024 12:57:38 - Starting MoneyTransferContainerTest using Java 19.0.1 with PID 28716 (started by Userg in C:\JAVA\MoneyTransferApp)
+24-11-2024 12:57:38 - No active profile set, falling back to 1 default profile: "default"
+24-11-2024 12:57:40 - Started MoneyTransferContainerTest in 2.311 seconds (process running for 10.229)
+24-11-2024 12:59:57 - Starting MoneyTransferContainerTest using Java 19.0.1 with PID 30296 (started by Userg in C:\JAVA\MoneyTransferApp)
+24-11-2024 12:59:57 - No active profile set, falling back to 1 default profile: "default"
+24-11-2024 12:59:59 - Started MoneyTransferContainerTest in 2.353 seconds (process running for 9.91)
